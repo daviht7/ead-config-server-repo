@@ -1,7 +1,7 @@
 server:
   port: 8087
   servlet:
-    context-path: '/ead-authuser/'
+    context-path: "/ead-authuser/"
 
 spring:
   application:
@@ -35,10 +35,22 @@ logging:
 ead:
   api:
     url:
-      course: 'http://ead-course-service/ead-course'
+      course: "http://ead-course-service/ead-course"
   broker:
     exchange:
       userEvent: ead.userevent
+
+authuser:
+  refreshScope:
+    name: Davi Holanda
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
 
 resilience4j:
   circuitbreaker:
