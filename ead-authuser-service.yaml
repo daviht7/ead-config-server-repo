@@ -51,6 +51,10 @@ management:
         include:
           - refresh
           - health
+          - shutdown
+  endpoint:
+    shutdown:
+      enabled: true
 
 resilience4j:
   circuitbreaker:
