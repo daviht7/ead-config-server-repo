@@ -7,7 +7,7 @@ spring:
   application:
     name: ead-notification-service
   datasource:
-    url: ${JDBC_DATABASE_URL}
+    url:  ${JDBC_DATABASE_URL}
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
   jpa:
@@ -22,7 +22,6 @@ spring:
   rabbitmq:
     addresses: ${CLOUDAMQP_URL}
 
-# incluir broker properties
 ead:
   broker:
     exchange:
@@ -32,6 +31,7 @@ ead:
         name: ead.notificationcommand.ms.notification
     key:
       notificationCommandKey: ms.notification
+
 
 management:
   endpoints:

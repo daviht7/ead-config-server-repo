@@ -1,15 +1,15 @@
 server:
-  port: 8084
+  port: ${PORT}
   servlet:
-    context-path: '/ead-notification/'
+    context-path: "/ead-course/"
 
 spring:
   application:
-    name: ead-notification-service
+    name: ead-course-service
   datasource:
-    url:  jdbc:postgresql://localhost:5432/ead-notification-v2
-    username: postgres
-    password: banco123
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,30 +19,22 @@ spring:
     properties:
       hibernate:
         show_sql: true
-  output:
-    ansi:
-      enabled: Always
   rabbitmq:
-    addresses: amqps://oqaevxaf:6KU7WK_x0k2Et0CwgwlOOdf95NAR4uPG@woodpecker.rmq.cloudamqp.com/oqaevxaf
-
-
-logging:
-  level:
-    com.ead: TRACE
-    root: INFO
-    org.springframework.web: DEBUG
-    org.hibernate: INFO
+    addresses: ${CLOUDAMQP_URL}
 
 ead:
+  api:
+    url:
+      authuser: "http://ead-authuser-service/ead-authuser"
   broker:
     exchange:
+      userEventExchange: ead.userevent
       notificationCommandExchange: ead.notificationcommand
     queue:
-      notificationCommandQueue:
-        name: ead.notificationcommand.ms.notification
+      userEventQueue:
+        name: ead.userevent.ms.course
     key:
       notificationCommandKey: ms.notification
-
 
 management:
   endpoints:

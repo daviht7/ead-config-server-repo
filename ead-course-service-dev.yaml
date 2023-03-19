@@ -1,15 +1,15 @@
 server:
   port: 8082
   servlet:
-    context-path: "/ead-course/"
+    context-path: '/ead-course/'
 
 spring:
   application:
     name: ead-course-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/ead-course
+    url:  jdbc:postgresql://localhost:5432/ead-course-v2
     username: postgres
-    password: root
+    password: banco123
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,8 +19,12 @@ spring:
     properties:
       hibernate:
         show_sql: true
+  output:
+    ansi:
+      enabled: Always
   rabbitmq:
-    addresses: amqps://uyfpgewb:f2dpD0f9MMPEclbjTlxMBaD2xXch-jqn@chimpanzee.rmq.cloudamqp.com/uyfpgewb
+    addresses: amqps://oqaevxaf:6KU7WK_x0k2Et0CwgwlOOdf95NAR4uPG@woodpecker.rmq.cloudamqp.com/oqaevxaf
+
 
 logging:
   level:
@@ -32,7 +36,7 @@ logging:
 ead:
   api:
     url:
-      authuser: "http://ead-authuser-service/ead-authuser"
+      authuser: 'http://ead-authuser-service/ead-authuser'
   broker:
     exchange:
       userEventExchange: ead.userevent

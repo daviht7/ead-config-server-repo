@@ -1,13 +1,13 @@
 server:
   port: ${PORT}
   servlet:
-    context-path: "/ead-authuser/"
+    context-path: '/ead-authuser/'
 
 spring:
   application:
     name: ead-authuser-service
   datasource:
-    url: ${JDBC_DATABASE_URL}
+    url:  ${JDBC_DATABASE_URL}
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
   jpa:
@@ -25,14 +25,14 @@ spring:
 ead:
   api:
     url:
-      course: "http://ead-course-service/ead-course"
+      course: 'http://ead-course-service/ead-course'
   broker:
     exchange:
       userEvent: ead.userevent
 
 authuser:
-  refreshScope:
-    name: Davi Wesley Freitas Holanda
+  refreshscope:
+    name: Michelli Brito UPDATE!!!!!!!
 
 management:
   endpoints:
@@ -41,10 +41,7 @@ management:
         include:
           - refresh
           - health
-          - shutdown
-  endpoint:
-    shutdown:
-      enabled: true
+
 
 resilience4j:
   circuitbreaker:

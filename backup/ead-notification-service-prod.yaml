@@ -1,5 +1,5 @@
 server:
-  port: 8084
+  port: ${PORT}
   servlet:
     context-path: '/ead-notification/'
 
@@ -7,9 +7,9 @@ spring:
   application:
     name: ead-notification-service
   datasource:
-    url:  jdbc:postgresql://localhost:5432/ead-notification-v2
-    username: postgres
-    password: banco123
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,20 +19,10 @@ spring:
     properties:
       hibernate:
         show_sql: true
-  output:
-    ansi:
-      enabled: Always
   rabbitmq:
-    addresses: amqps://oqaevxaf:6KU7WK_x0k2Et0CwgwlOOdf95NAR4uPG@woodpecker.rmq.cloudamqp.com/oqaevxaf
+    addresses: ${CLOUDAMQP_URL}
 
-
-logging:
-  level:
-    com.ead: TRACE
-    root: INFO
-    org.springframework.web: DEBUG
-    org.hibernate: INFO
-
+# incluir broker properties
 ead:
   broker:
     exchange:
@@ -42,7 +32,6 @@ ead:
         name: ead.notificationcommand.ms.notification
     key:
       notificationCommandKey: ms.notification
-
 
 management:
   endpoints:
