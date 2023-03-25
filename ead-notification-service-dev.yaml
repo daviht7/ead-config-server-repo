@@ -7,9 +7,9 @@ spring:
   application:
     name: ead-notification-service
   datasource:
-    url:  jdbc:postgresql://localhost:5432/ead-notification-v2
+    url:  jdbc:postgresql://localhost:5432/ead-notification
     username: postgres
-    password: banco123
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
