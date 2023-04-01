@@ -25,6 +25,14 @@ spring:
   rabbitmq:
     addresses: amqps://uyfpgewb:f2dpD0f9MMPEclbjTlxMBaD2xXch-jqn@chimpanzee.rmq.cloudamqp.com/uyfpgewb
 
+ead:
+  broker:
+    exchange:
+      userEventExchange: ead.userevent
+    queue:
+      userEventQueue:
+        name: ead.userevent.ms.payment
+
 management:
   endpoints:
     web:
