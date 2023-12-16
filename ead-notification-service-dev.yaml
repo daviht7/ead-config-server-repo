@@ -9,7 +9,7 @@ spring:
   datasource:
     url:  jdbc:postgresql://localhost:5432/ead-notification
     username: postgres
-    password: root
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
@@ -23,7 +23,7 @@ spring:
     ansi:
       enabled: Always
   rabbitmq:
-    addresses: amqps://ttygptaq:r8R9oZC-CJW-TjqA9prtZO6PdYkCTqrG@jackal.rmq.cloudamqp.com/ttygptaq
+    addresses: localhost:5672
 
 
 logging:
