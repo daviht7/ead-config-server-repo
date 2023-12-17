@@ -24,6 +24,11 @@ spring:
       enabled: Always
   rabbitmq:
     addresses: localhost:5672
+    
+opentracing:
+  jaeger:
+    http-sender:
+      url: http://localhost:14268/api/traces
 
 logging:
   level:
