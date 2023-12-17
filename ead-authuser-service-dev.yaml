@@ -24,15 +24,6 @@ spring:
       enabled: Always
   rabbitmq:
     addresses: localhost:5672
-    
-opentracing:
-  jaeger:
-    udp-sender:
-      host: localhost
-      port: 6831
-    enabled: true
-    log-spans: true
-    service-name: ead-authuser-service
       
 logging:
   level:
