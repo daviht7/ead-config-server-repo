@@ -27,9 +27,13 @@ spring:
     
 opentracing:
   jaeger:
-    http-sender:
-      url: http://localhost:14268/api/traces
-
+    udp-sender:
+      host: localhost
+      port: 6831
+    enabled: true
+    log-spans: true
+    service-name: ead-authuser-service
+      
 logging:
   level:
     com.ead: INFO
