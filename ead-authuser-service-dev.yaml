@@ -55,6 +55,7 @@ management:
         include:
           - refresh
           - health
+          - metrics
 
 
 resilience4j:
