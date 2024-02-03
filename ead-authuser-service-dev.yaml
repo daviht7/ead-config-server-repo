@@ -52,10 +52,7 @@ management:
   endpoints:
     web:
       exposure:
-        include:
-          - refresh
-          - health
-          - metrics
+        include: '*'
 
 
 resilience4j:
